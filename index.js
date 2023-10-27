@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
 
 app.get("/:q", async (req, res) => {
   // #以降の文字列を取得
-  const hash = (req.params.q || "").replace(/&/g, "%26").replace(/\"/g, "%22");
+  const hash = (req.params.q || "").replace(/&/g, "%26").replace(/\"/g, "%22").replace(/#/, "%23");
   console.log("hash is " + hash);
 
   let ogtitle = "";
